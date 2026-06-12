@@ -1,0 +1,14 @@
+[
+  {"id": "coint", "topic": "cointegration",
+   "text": "Two stock prices are cointegrated if a linear combination of them is stationary (mean-reverting) even though each price individually wanders. Cointegration is the statistical precondition for pairs trading: it means the spread between the two tends to return to an average, so you can bet on that reversion. The Engle-Granger test produces a p-value; below 0.05 the pair is considered cointegrated."},
+  {"id": "halflife", "topic": "half-life",
+   "text": "The half-life of mean reversion estimates how many days it typically takes for the spread to close half of a deviation from its mean. It is derived by regressing the daily change in the spread on its previous level (an Ornstein-Uhlenbeck / AR(1) fit). A short half-life (days to a few weeks) is desirable for pairs trading; a very long or infinite half-life means reversion is too slow to trade."},
+  {"id": "zscore", "topic": "z-score strategy",
+   "text": "The z-score measures how many standard deviations the current spread is from its rolling mean. A common pairs strategy goes short the spread when z rises above an entry threshold (e.g. +2), long the spread when z falls below the negative threshold (e.g. -2), and closes the position when z returns near zero (e.g. within 0.5). Using a rolling window for the mean and standard deviation avoids look-ahead bias."},
+  {"id": "oos", "topic": "out-of-sample testing",
+   "text": "An honest backtest fits the hedge ratio and spread statistics on a training slice of history and then evaluates performance only on a later, unseen test slice. Strong in-sample results that collapse out-of-sample are a classic sign of overfitting. Reporting train versus test Sharpe ratios separately is more credible than a single in-sample number."},
+  {"id": "metrics", "topic": "performance metrics",
+   "text": "Key backtest metrics: the Sharpe ratio (annualised return per unit of total volatility), the Sortino ratio (like Sharpe but penalising only downside volatility), maximum drawdown (worst peak-to-trough loss), total return, and time-in-market (fraction of days holding a position). A market-neutral pairs strategy is judged less on raw return and more on Sharpe and drawdown."},
+  {"id": "risks", "topic": "pairs-trading risks",
+   "text": "Pairs trading can fail when a historically stable relationship breaks structurally (a merger, a new product cycle, or a regime change), causing the spread to diverge instead of revert. Other risks include borrowing costs and availability for the short leg, transaction costs eroding thin edges, and crowding where many funds trade the same well-known pairs. Cointegration found in-sample does not guarantee future reversion."}
+]

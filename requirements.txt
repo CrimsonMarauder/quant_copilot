@@ -1,0 +1,9 @@
+streamlit>=1.40
+groq>=0.13.0
+sentence-transformers>=3.0.0
+yfinance>=0.2.40
+pandas>=2.0
+numpy>=1.26
+statsmodels>=0.14
+chromadb>=0.5
+pysqlite3-binary>=0.5 ; sys_platform == "linux"
